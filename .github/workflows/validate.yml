@@ -1,0 +1,27 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Lint PHP
+        run: find . -path ./.git -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - name: Validate manifest
+        run: php scripts/validate-manifest.php
+
+      - name: Code style (Pint)
+        run: |
+          composer install --no-interaction --prefer-dist --no-progress
+          vendor/bin/pint --test

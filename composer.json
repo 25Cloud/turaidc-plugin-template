@@ -1,0 +1,20 @@
+{
+    "name": "turaidc/plugin-template",
+    "description": "TuraIDC 插件开发模板仓库（插件包规范模板）",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "TuraIDC\\Plugins\\Addons\\MyPlugin\\": ""
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
