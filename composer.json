@@ -1,6 +1,6 @@
 {
     "name": "turaidc/plugin-template",
-    "description": "TuraIDC 插件开发模板仓库（插件包规范模板）",
+    "description": "TuraIDC 插件开发模板仓库（清单 v2 骨架）",
     "type": "library",
     "license": "MIT",
     "require": {
@@ -12,7 +12,10 @@
     "autoload": {
         "psr-4": {
             "TuraIDC\\Plugins\\Addons\\MyPlugin\\": ""
-        }
+        },
+        "classmap": [
+            "src/"
+        ]
     },
     "config": {
         "sort-packages": true
